@@ -12,26 +12,22 @@ Some projects are production-oriented tools, while others are learning experimen
 
 ## Projects
 
-### `auto donwload telegram goji`
+### `auto donwload telegram`
 A Telegram media downloader project focused on downloading, managing, and organizing media from Telegram chats or channels.
 
 Main contents may include:
 - Telegram client scripts
 - downloader logic
-- session files
-- logs
-- cached metadata
 - runtime configuration
 
-### `telegram_uploader_v5_final (2)`
+### `telegram_uploader`
 A Telegram uploader application for sending files or media to Telegram using one or more accounts.
 
 Main contents may include:
 - upload workflow
-- account/session management
 - queue handling
 - file splitting helpers
-- runtime configuration via environment variables
+
 
 ### `auto subtitle`
 An automatic subtitle generation project with CLI tools, translation support, and optional Docker-based services.
@@ -90,21 +86,10 @@ Main contents may include:
 - local Python environment
 - runtime dependencies
 
-### `portofolio`
-A simple portfolio/web presentation project.
-
 Main contents may include:
 - `index.html`
 - images and static assets
 
-### `website`
-A frontend web project, likely based on Node.js/Next.js tooling.
-
-Main contents may include:
-- `package.json`
-- `package-lock.json`
-- TypeScript and Tailwind configuration
-- app/frontend source files
 
 ## Repository Structure
 
