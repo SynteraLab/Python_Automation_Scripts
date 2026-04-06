@@ -1,0 +1,2 @@
+telethon>=1.42.0,<2.0.0
+uvloop>=0.22.1; sys_platform != "win32"

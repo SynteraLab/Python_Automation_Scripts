@@ -1,0 +1,1 @@
+"""Auto Subtitle AI — Terminal User Interface package."""

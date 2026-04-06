@@ -1,0 +1,23 @@
+# Core
+requests>=2.31.0
+aiohttp>=3.9.0
+aiofiles>=23.2.0
+beautifulsoup4>=4.12.0
+lxml>=4.9.0
+certifi>=2023.0.0
+
+# Interactive TUI
+rich>=13.0.0
+
+# Config
+pyyaml>=6.0
+
+# Browser cookies (for Cloudflare bypass)
+browser-cookie3>=0.19.0
+curl_cffi>=0.14.0
+
+# yt-dlp fallback (for YouTube, TikTok, Instagram, 1000+ sites)
+yt-dlp>=2024.0.0
+
+# Optional: JS-rendered pages
+# playwright>=1.40.0

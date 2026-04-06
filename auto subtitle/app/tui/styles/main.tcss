@@ -1,0 +1,354 @@
+/* ═══════════════════════════════════════════════════════════════
+   Auto Subtitle AI — TUI Stylesheet
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Global ──────────────────────────────────────────────────── */
+
+Screen {
+    background: $surface;
+}
+
+/* ── Sidebar ─────────────────────────────────────────────────── */
+
+#sidebar {
+    width: 28;
+    background: $panel;
+    border-right: thick $accent;
+    padding: 1 0;
+}
+
+#sidebar .sidebar-title {
+    text-align: center;
+    text-style: bold;
+    color: $accent;
+    padding: 1 2;
+}
+
+#sidebar .sidebar-version {
+    text-align: center;
+    color: $text-muted;
+    padding: 0 2 1 2;
+}
+
+.nav-button {
+    width: 100%;
+    margin: 0 1;
+    min-height: 3;
+}
+
+.nav-button:hover {
+    background: $accent 20%;
+}
+
+.nav-button.-active {
+    background: $accent 30%;
+    text-style: bold;
+    border-left: thick $accent;
+}
+
+/* ── Main Content ────────────────────────────────────────────── */
+
+#content-area {
+    width: 1fr;
+    padding: 1 2;
+}
+
+.screen-title {
+    text-style: bold;
+    color: $accent;
+    text-align: center;
+    padding: 1 0;
+    width: 100%;
+}
+
+.section-title {
+    text-style: bold;
+    color: $secondary;
+    padding: 1 0 0 0;
+}
+
+/* ── Cards / Panels ──────────────────────────────────────────── */
+
+.card {
+    background: $panel;
+    border: round $primary-background-lighten-2;
+    padding: 1 2;
+    margin: 1 0;
+    height: auto;
+}
+
+.card-title {
+    text-style: bold;
+    color: $text;
+    padding: 0 0 1 0;
+}
+
+.stat-card {
+    background: $panel;
+    border: round $primary-background-lighten-2;
+    padding: 1 2;
+    margin: 0 1;
+    width: 1fr;
+    height: 7;
+    content-align: center middle;
+}
+
+.stat-value {
+    text-style: bold;
+    color: $accent;
+    text-align: center;
+}
+
+.stat-label {
+    color: $text-muted;
+    text-align: center;
+}
+
+/* ── File Browser ────────────────────────────────────────────── */
+
+#file-browser {
+    height: 16;
+    border: round $primary-background-lighten-2;
+    background: $panel;
+    margin: 1 0;
+}
+
+.file-info-panel {
+    height: 4;
+    background: $panel;
+    border: round $primary-background-lighten-2;
+    padding: 0 2;
+    margin: 0 0 1 0;
+}
+
+/* ── Progress ────────────────────────────────────────────────── */
+
+.progress-container {
+    height: auto;
+    padding: 1 2;
+    background: $panel;
+    border: round $primary-background-lighten-2;
+    margin: 1 0;
+}
+
+.progress-label {
+    color: $text;
+    padding: 0 0 0 0;
+}
+
+.progress-status {
+    color: $success;
+    text-style: italic;
+}
+
+/* ── Log Panel ───────────────────────────────────────────────── */
+
+#log-panel {
+    height: 12;
+    border: round $primary-background-lighten-2;
+    background: $surface-darken-1;
+    margin: 1 0;
+}
+
+#log-panel .log-line {
+    color: $text-muted;
+}
+
+#log-panel .log-line-info {
+    color: $text;
+}
+
+#log-panel .log-line-success {
+    color: $success;
+}
+
+#log-panel .log-line-error {
+    color: $error;
+}
+
+#log-panel .log-line-warning {
+    color: $warning;
+}
+
+/* ── Subtitle Viewer ─────────────────────────────────────────── */
+
+#subtitle-viewer {
+    height: 1fr;
+    border: round $primary-background-lighten-2;
+    background: $panel;
+    margin: 1 0;
+}
+
+.subtitle-line {
+    padding: 0 1;
+}
+
+.subtitle-timestamp {
+    color: $accent;
+    text-style: dim;
+}
+
+.subtitle-text {
+    color: $text;
+}
+
+/* ── Forms / Inputs ──────────────────────────────────────────── */
+
+.form-group {
+    height: auto;
+    margin: 1 0;
+    layout: horizontal;
+}
+
+.form-label {
+    width: 20;
+    padding: 1 1 0 0;
+    text-align: right;
+    color: $text;
+}
+
+.form-input {
+    width: 1fr;
+}
+
+/* ── Settings Screen ─────────────────────────────────────────── */
+
+.settings-group {
+    background: $panel;
+    border: round $primary-background-lighten-2;
+    padding: 1 2;
+    margin: 1 0;
+    height: auto;
+}
+
+.settings-group-title {
+    text-style: bold;
+    color: $accent;
+    padding: 0 0 1 0;
+}
+
+/* ── Live Screen ─────────────────────────────────────────────── */
+
+#live-output {
+    height: 1fr;
+    border: round $success 50%;
+    background: $surface-darken-1;
+    padding: 1 2;
+    margin: 1 0;
+}
+
+.live-indicator {
+    color: $error;
+    text-style: bold blink;
+}
+
+.live-indicator-off {
+    color: $text-muted;
+}
+
+/* ── Buttons ─────────────────────────────────────────────────── */
+
+.action-button {
+    margin: 1 1;
+    min-width: 16;
+}
+
+.danger-button {
+    margin: 1 1;
+    min-width: 16;
+    background: $error;
+}
+
+/* ── Batch Screen ────────────────────────────────────────────── */
+
+.batch-item {
+    height: 3;
+    padding: 0 2;
+    background: $panel;
+    margin: 0 0 0 0;
+}
+
+.batch-item-name {
+    width: 1fr;
+}
+
+.batch-item-status {
+    width: 16;
+    text-align: right;
+}
+
+/* ── Home stats row ──────────────────────────────────────────── */
+
+#stats-row {
+    layout: horizontal;
+    height: 7;
+    margin: 1 0;
+}
+
+#quick-actions {
+    layout: horizontal;
+    height: auto;
+    align: center middle;
+    margin: 1 0;
+}
+
+/* ── Table styling ───────────────────────────────────────────── */
+
+DataTable {
+    height: 1fr;
+    margin: 1 0;
+}
+
+DataTable > .datatable--header {
+    text-style: bold;
+    background: $accent 20%;
+}
+
+/* ── Footer ──────────────────────────────────────────────────── */
+
+Footer {
+    background: $panel;
+}
+
+Header {
+    background: $accent 40%;
+}
+
+/* ── Toast / Notifications ───────────────────────────────────── */
+
+Toast {
+    margin: 1 2;
+}
+
+/* ── Modal dialogs ───────────────────────────────────────────── */
+
+ModalScreen {
+    align: center middle;
+}
+
+#modal-dialog {
+    width: 60;
+    height: auto;
+    max-height: 80%;
+    background: $panel;
+    border: thick $accent;
+    padding: 2 3;
+}
+
+#modal-dialog .modal-title {
+    text-style: bold;
+    color: $accent;
+    text-align: center;
+    padding: 0 0 1 0;
+}
+
+#modal-dialog .modal-body {
+    padding: 1 0;
+}
+
+#modal-dialog .modal-actions {
+    layout: horizontal;
+    align: center middle;
+    height: auto;
+    padding: 1 0 0 0;
+}

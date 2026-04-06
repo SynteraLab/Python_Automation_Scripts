@@ -1,0 +1,11 @@
+video2frames/
+├── video2frames/
+│   ├── __init__.py
+│   ├── __main__.py
+│   ├── utils.py
+│   ├── config.py
+│   ├── engine.py
+│   ├── preview.py
+│   └── cli.py
+├── run.py
+└── requirements.txt

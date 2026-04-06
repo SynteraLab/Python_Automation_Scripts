@@ -1,0 +1,148 @@
+tui/
+├── __init__.py                    # Exposes run_tui()
+├── app.py                         # UltraApp(textual.App) + run_tui()
+│
+├── engine/                        # ── Core Infrastructure ──
+│   ├── __init__.py
+│   ├── events.py                  # Event bus (pub/sub message system)
+│   ├── lifecycle.py               # Startup, shutdown, resource cleanup
+│   ├── config_manager.py          # Hot-reload config, runtime mutations
+│   └── errors.py                  # Error boundaries, safe execution
+│
+├── themes/                        # ── Visual System ──
+│   ├── __init__.py
+│   ├── manager.py                 # Theme registry + switching
+│   ├── dark.tcss                  # Dark theme (default)
+│   └── light.tcss                 # Light theme
+│
+├── logging_/                      # ── Structured Logging ──
+│   ├── __init__.py
+│   └── panel.py                   # Log viewer widget (filter, search)
+│
+├── nodes/                         # ── Visual Node Engine ──
+│   ├── __init__.py
+│   ├── base.py                    # Node/Edge/Port data models
+│   ├── registry.py                # Node type registry
+│   ├── builtin.py                 # Built-in nodes (download, parse, etc.)
+│   └── renderer.py                # Terminal node graph renderer
+│
+├── workflow/                      # ── Workflow Automation ──
+│   ├── __init__.py
+│   ├── executor.py                # Sequential/parallel execution engine
+│   ├── scheduler.py               # Cron-like scheduler
+│   └── storage.py                 # Save/load workflows (JSON/YAML)
+│
+├── controllers/                   # ── Business Logic ──
+│   ├── __init__.py
+│   └── downloader.py              # smart_download (thread-safe)
+│
+├── widgets/                       # ── Reusable Textual Widgets ──
+│   ├── __init__.py
+│   ├── sidebar.py                 # Navigation sidebar
+│   ├── status_bar.py              # Bottom status bar (live info)
+│   ├── node_editor.py             # Node editor canvas
+│   ├── modal.py                   # Floating modal/dialog system
+│   ├── format_table.py            # Format selection table
+│   └── charts.py                  # Dashboard chart widgets
+│
+├── screens/                       # ── Textual Screens ──
+│   ├── __init__.py
+│   ├── main_screen.py             # Main workspace screen
+│   ├── download.py                # Download flow screen
+│   ├── batch.py                   # Batch download screen
+│   ├── erome.py                   # EroMe album screen
+│   ├── info.py                    # Video info screen
+│   ├── history.py                 # History + stats screen
+│   └── settings.py                # Settings screen
+│
+├── modes/                         # ── Multi-Mode System ──
+│   ├── __init__.py
+│   ├── manager.py                 # Mode state machine
+│   ├── build_mode.py              # Node editor active
+│   ├── run_mode.py                # Workflow execution view
+│   ├── monitor_mode.py            # Dashboard + logs
+│   └── focus_mode.py              # Minimal distraction-free
+│
+├── dashboard/                     # ── Real-time Dashboard ──
+│   ├── __init__.py
+│   ├── metrics.py                 # System metrics collector
+│   ├── live.py                    # Live download status tracker
+│   └── stats.py                   # Statistics aggregator
+│
+├── intelligence/                  # ── AI-Assisted Layer ──
+│   ├── __init__.py
+│   ├── tracker.py                 # Usage/behavior tracking
+│   ├── advisor.py                 # Recommendations engine
+│   └── adaptive.py                # Adaptive UI logic
+│
+├── plugins/                       # ── Plugin System ──
+│   ├── __init__.py
+│   ├── api.py                     # register_node(), register_command()
+│   ├── loader.py                  # Dynamic plugin loading
+│   └── sandbox.py                 # Safe execution wrapper
+│
+├── palette/                       # ── Command Palette ──
+│   ├── __init__.py
+│   └── commander.py               # Fuzzy finder + command router
+│
+└── keybindings/                   # ── Input System ──
+    ├── __init__.py
+    └── manager.py                 # Keybind registry + context system
+
+    ┌──────────┐     EventBus      ┌──────────────┐
+│  Widget   │──── publish ────→│   Handler     │
+│  (click)  │                  │  (controller) │
+└──────────┘                   └──────┬───────┘
+                                      │
+                                      ▼
+                               ┌──────────────┐
+                               │   Worker      │
+                               │  (thread)     │
+                               │  download()   │
+                               └──────┬───────┘
+                                      │
+                               publish("download.progress")
+                               publish("download.complete")
+                                      │
+                                      ▼
+                               ┌──────────────┐
+                               │  Dashboard    │
+                               │  Widget       │
+                               │  (updates)    │
+                               └──────────────┘
+
+                               UltraApp(textual.App)
+│
+├── CSS: themes/dark.tcss (default)
+│
+├── Screens:
+│   ├── MainScreen (default)
+│   │   ├── Sidebar (left, collapsible)
+│   │   ├── Workspace (center, multi-view)
+│   │   │   ├── BuildMode → NodeEditor widget
+│   │   │   ├── RunMode → execution progress
+│   │   │   ├── MonitorMode → dashboard panels
+│   │   │   └── FocusMode → single task view
+│   │   └── StatusBar (bottom, live info)
+│   │
+│   ├── DownloadScreen (modal-like)
+│   ├── BatchScreen
+│   ├── EromeScreen
+│   ├── HistoryScreen
+│   ├── SettingsScreen
+│   └── InfoScreen
+│
+├── Bindings:
+│   ├── ctrl+p  → Command Palette
+│   ├── ctrl+b  → Toggle Sidebar
+│   ├── ctrl+d  → Quick Download
+│   ├── F1-F4   → Switch Mode
+│   ├── ctrl+t  → Toggle Theme
+│   ├── ctrl+l  → Toggle Log Panel
+│   ├── ctrl+q  → Quit
+│   └── ?       → Help
+│
+└── Workers:
+    ├── download_worker (thread=True)
+    ├── workflow_worker (thread=True)
+    └── metrics_worker (async)

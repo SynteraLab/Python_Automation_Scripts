@@ -1,0 +1,1 @@
+"""Statistics aggregation (used by chart widgets)."""

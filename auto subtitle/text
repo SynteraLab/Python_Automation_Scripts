@@ -1,0 +1,96 @@
+auto-subtitle-ai/
+├── app/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── api/
+│   │   ├── __init__.py
+│   │   ├── router.py
+│   │   ├── dependencies.py
+│   │   └── endpoints/
+│   │       ├── __init__.py
+│   │       ├── upload.py
+│   │       ├── subtitle.py
+│   │       ├── status.py
+│   │       ├── download.py
+│   │       └── websocket.py
+│   ├── core/
+│   │   ├── __init__.py
+│   │   ├── config.py
+│   │   ├── logging_config.py
+│   │   ├── exceptions.py
+│   │   └── events.py
+│   ├── services/
+│   │   ├── __init__.py
+│   │   ├── subtitle_service.py
+│   │   ├── upload_service.py
+│   │   ├── job_service.py
+│   │   └── realtime_service.py
+│   ├── workers/
+│   │   ├── __init__.py
+│   │   ├── celery_app.py
+│   │   ├── tasks.py
+│   │   └── pipeline.py
+│   ├── engines/
+│   │   ├── __init__.py
+│   │   ├── transcription.py
+│   │   ├── sync_correction.py
+│   │   ├── subtitle_formatter.py
+│   │   └── style_presets.py
+│   ├── models/
+│   │   ├── __init__.py
+│   │   └── schemas.py
+│   └── utils/
+│       ├── __init__.py
+│       ├── ffmpeg_wrapper.py
+│       └── file_manager.py
+├── scripts/
+│   └── cli.py
+├── tests/
+│   ├── __init__.py
+│   ├── conftest.py
+│   ├── test_api.py
+│   └── test_engines.py
+├── docker/
+│   ├── Dockerfile
+│   └── Dockerfile.worker
+├── storage/
+│   ├── uploads/.gitkeep
+│   ├── outputs/.gitkeep
+│   └── temp/.gitkeep
+├── .env.example
+├── docker-compose.yml
+├── Makefile
+├── requirements.txt
+└── README.md
+
+
+auto-subtitle-ai/
+├── app/
+│   ├── tui/
+│   │   ├── __init__.py
+│   │   ├── app.py                  # Main TUI application
+│   │   ├── screens/
+│   │   │   ├── __init__.py
+│   │   │   ├── home.py             # Dashboard
+│   │   │   ├── generate.py         # Single-file generation
+│   │   │   ├── batch.py            # Batch folder processing
+│   │   │   ├── live.py             # Live microphone
+│   │   │   ├── jobs.py             # Job monitor
+│   │   │   ├── preview.py          # Subtitle preview
+│   │   │   └── settings.py         # Settings editor
+│   │   ├── widgets/
+│   │   │   ├── __init__.py
+│   │   │   ├── sidebar.py          # Navigation sidebar
+│   │   │   ├── file_tree.py        # File browser widget
+│   │   │   ├── progress_bar.py     # Enhanced progress bars
+│   │   │   ├── log_panel.py        # Scrolling log output
+│   │   │   └── subtitle_viewer.py  # Subtitle text viewer
+│   │   └── styles/
+│   │       └── main.tcss           # Textual CSS stylesheet
+│   └── … (existing modules unchanged)
+├── scripts/
+│   ├── cli.py
+│   └── tui.py                      # TUI launcher
+└── requirements.txt                 # + textual dependency
+
+python scripts/tui.py

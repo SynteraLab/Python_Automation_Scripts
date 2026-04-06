@@ -1,0 +1,44 @@
+{
+    "api_id": ,
+    "api_hash": "",
+    "phone": "+",
+    "download_folder": "",
+    "database_folder": "data",
+    "log_folder": "logs",
+    "session_folder": "sessions",
+    "max_concurrent_downloads": 5,
+    "max_retries": 3,
+    "retry_delay": 3,
+    "scan_limit": 2000,
+    "items_per_page": 15,
+    "skip_existing": true,
+    "flood_wait_threshold": 60,
+    "default_topic_only": false,
+    "default_topic_id": 0,
+    "include_text_messages": true,
+    "auto_scrape_interval": 90,
+    "auto_scrape_limit": 300,
+    "auto_scrape_auto_download": true,
+    "accounts": {
+        "akun1": {
+            "api_id": ,
+            "api_hash": "",
+            "phone": "+",
+            "session_name": "session_akun1"
+        },
+        "wanz": {
+            "api_id": ,
+            "api_hash": "",
+            "phone": "+",
+            "session_name": "session_wanz"
+        },
+        "wan": {
+            "api_id": ,
+            "api_hash": "",
+            "phone": "+",
+            "session_name": "session_wan"
+        }
+    },
+    "active_account": "wan",
+    "download_part_size_kb": 512
+}
